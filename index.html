@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $y = intval(fgets(STDIN));
     
     // Replace with the name of your .class file
-    $class_file = "Example.class";
+    $class_file = "SkritiProgram.class";
     exec("java $class_file $x $y", $output);
     
     // Print the output of the .class file
