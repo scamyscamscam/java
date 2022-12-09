@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>Example Webpage</title>
+</head>
+<body>
+
+<h1>Example Webpage</h1>
+
+<p>
+This webpage receives two integers from a Java program and returns their sum.
+</p>
+
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $x = intval(fgets(STDIN));
+    $y = intval(fgets(STDIN));
+    echo "The sum of the two integers is " . ($x + $y);
+} else {
+    echo "This webpage can only be accessed using a POST request.";
+}
+?>
+
+</body>
+</html>
