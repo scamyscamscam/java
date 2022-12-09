@@ -7,14 +7,20 @@
 <h1>Example Webpage</h1>
 
 <p>
-This webpage receives two integers from a Java program and returns their sum.
+This webpage receives two integers from a Java program, runs a .class file with those integers as input, and returns the output of the .class file.
 </p>
 
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $x = intval(fgets(STDIN));
     $y = intval(fgets(STDIN));
-    echo "The sum of the two integers is " . ($x + $y);
+    
+    // Replace with the name of your .class file
+    $class_file = "Example.class";
+    exec("java $class_file $x $y", $output);
+    
+    // Print the output of the .class file
+    echo implode("\n", $output);
 } else {
     echo "This webpage can only be accessed using a POST request.";
 }
